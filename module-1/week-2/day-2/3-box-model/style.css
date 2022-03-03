@@ -1,0 +1,48 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.block {
+	border: 1px solid black;
+}
+
+img {
+	max-width: 50px;
+}
+
+.box {
+	color: white;
+	width: 100px;
+	height: 100px;
+	background-color: blue;
+	margin: 30px 20px 0 50px;
+	border: 5px dashed red;
+	/* Short hand notation: 
+    Top - Right - Bottom - Left
+  */
+	/* padding: 20px 20px 20px 20px; */
+
+	/* padding: 20px 10px; */
+
+	/* padding: 5px 10px 20px; */
+
+	/* padding: auto; */
+}
+.box > p {
+	text-align: center;
+}
+
+.box:nth-of-type(3) {
+	margin: auto;
+}
+
+.container {
+	width: 50%;
+	border: 1px solid black;
+}
+
+.container .box {
+	margin: auto;
+}

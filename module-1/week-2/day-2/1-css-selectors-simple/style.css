@@ -1,0 +1,61 @@
+* {
+	border: 1px solid red;
+}
+
+li {
+	background-color: rgb(139, 172, 201);
+}
+
+.list-item {
+	color: yellow;
+}
+
+.orange {
+	color: orangered;
+}
+
+#i-am-an-id {
+	font-size: 25px;
+}
+
+[href] {
+	background-color: brown;
+}
+a[href="https://google.com"]
+{
+	background-color: rgb(88, 179, 53);
+}
+
+a[href*="oo"] {
+	color: white;
+}
+
+.paragraph,
+h3 {
+	border: 2px dashed black;
+}
+
+div code {
+	color: red;
+}
+
+.parent > p {
+	background-color: magenta;
+}
+
+.card h3 ~ p {
+	font-size: 80%;
+}
+
+.card h3 + p {
+	background-color: bisque;
+}
+
+picture#avatar {
+	padding: 20px;
+	border: 1px solid black;
+}
+
+#avatar > img {
+	width: 200px;
+}

@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box;
+}
+html {
+  font-size: 16px;
+}
+body {
+  font-family: Arial;
+}
+
+#intro {
+  font-size: 1.1rem;
+}
+
+.list {
+  line-height: 1.9rem;
+  font-size: 1.1rem;
+}
+
+.list .item {
+  padding-left: 10px;
+}
+
+.has-border-bottom {
+  padding-bottom: 20px;
+  border-bottom: 1px solid;
+}
+
+li:hover {
+  cursor: pointer;
+  color: dodgerblue;
+}
