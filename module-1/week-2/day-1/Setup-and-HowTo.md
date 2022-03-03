@@ -41,7 +41,7 @@ You should create a `ironhack` folder in your computer. It should contain atleas
 
 ## Running JavaScript in your terminal
 
-Running a JavaScript file is handy, you can see all the `console.log()` you wrote and can easily check your code is behaving.
+Running a JavaScript file is handy, you can see all the `console.log()` you wrote and can easily check how your code is behaving.
 
 To do so, you will just need to execute `node the/path/to-your-file.js` or just `node yourfile.js` if your terminal is in the same directory as the file.
 
