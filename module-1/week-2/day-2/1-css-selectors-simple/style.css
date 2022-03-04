@@ -1,5 +1,6 @@
 * {
-	border: 1px solid red;
+	/* Useful property to debug */
+	/* border: 1px solid red; */
 }
 
 li {
@@ -31,7 +32,7 @@ a[href*="oo"] {
 }
 
 .paragraph,
-h3 {
+div:not(.card) > h3 {
 	border: 2px dashed black;
 }
 
@@ -52,10 +53,16 @@ div code {
 }
 
 picture#avatar {
-	padding: 20px;
-	border: 1px solid black;
+	width: 200px;
+	height: 200px;
+	display: flex;
+	border-radius: 50%;
+	border: 2px solid black;
+	overflow: hidden;
 }
 
 #avatar > img {
-	width: 200px;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
 }
