@@ -1,32 +1,52 @@
 * {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 html {
-  font-size: 16px;
+	font-size: 16px;
 }
 body {
-  font-family: Arial;
+	font-family: Arial;
 }
 
 #intro {
-  font-size: 1.1rem;
+	font-size: 1.1rem;
 }
 
 .list {
-  line-height: 1.9rem;
-  font-size: 1.1rem;
+	line-height: 1.9rem;
+	font-size: 1.1rem;
 }
 
 .list .item {
-  padding-left: 10px;
+	padding-left: 10px;
 }
 
 .has-border-bottom {
-  padding-bottom: 20px;
-  border-bottom: 1px solid;
+	padding-bottom: 20px;
+	border-bottom: 1px solid;
 }
 
 li:hover {
-  cursor: pointer;
-  color: dodgerblue;
+	cursor: pointer;
+	color: dodgerblue;
+}
+
+#header_main {
+	background-color: aqua;
+}
+
+#header_main * {
+	background-color: white;
+}
+
+.is-selected {
+	color: red;
+}
+
+aside#sidebar_main.lorem:hover {
+	background-color: rgb(66, 160, 223);
+}
+
+aside:hover {
+	background-color: black !important;
 }

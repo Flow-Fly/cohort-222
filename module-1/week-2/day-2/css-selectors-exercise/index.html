@@ -1,36 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="./style.css" />
-    <title>CSS Selectors I</title>
-  </head>
-  <body>
-    <header id="intro" class="has-border-bottom">
-      <h1>CSS Selectors I</h1>
-      Guess what's selected <b>:)</b><br />
-      Explain this with a simple sentence.<br />
-      Try to start with <i>Select all...</i> or <i>Select the...</i>.
-    </header>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<link rel="stylesheet" href="./style.css" />
+		<title>CSS Selectors I</title>
+	</head>
+	<body>
+		<header id="intro" class="has-border-bottom">
+			<h1>CSS Selectors I</h1>
+			Guess what's selected <b>:)</b><br />
+			Explain this with a simple sentence.<br />
+			Try to start with <i>Select all...</i> or <i>Select the...</i>.
+		</header>
 
-    <ol class="list">
-      <li class="item">p</li>
-      <li class="item">div</li>
-      <li class="item">span, a:hover</li>
-      <li class="item">p a</li>
-      <li class="item">#header_main *</li>
-      <li class="item">#header_main a.logo</li>
-      <li class="item">#header_main .logo</li>
-      <li class="item">.user</li>
-      <li class="item">.products, .product</li>
-      <li class="item">.products .product</li>
-      <li class="item">.logo + nav</li>
-      <li class="item">p > a</li>
-      <li class="item">.link.is-selected</li>
-      <li class="item">aside#sidebar_main:hover</li>
-      <li class="item">#sidebar_main nav.is-visible</li>
-    </ol>
-  </body>
+		<ol class="list">
+			<li class="item">p</li>
+			<li class="item">div</li>
+			<li class="item">span, a:hover</li>
+			<li class="item">p a</li>
+			<li class="item">#header_main *</li>
+			<li class="item">#header_main a.logo</li>
+			<li class="item">#header_main .logo</li>
+			<li class="item">.user</li>
+			<li class="item">.products, .product</li>
+			<li class="item">.products .product</li>
+			<li class="item">.logo + nav</li>
+			<li class="item">p > a</li>
+			<li class="item">.link.is-selected</li>
+			<li class="item">aside#sidebar_main:hover</li>
+			<li class="item">#sidebar_main nav.is-visible</li>
+		</ol>
+	</body>
+
+	<aside id="sidebar_main" class="lorem">
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et eos voluptate
+		dolor culpa optio, harum quibusdam illum, praesentium veritatis voluptates
+		beatae minus eveniet corrupti? Sunt officia aliquam ipsa provident qui.
+	</aside>
+
+	<!-- <div id="sidebar_main">
+		<div>
+			<nav class="is-visible"></nav>
+		</div>
+	</div> -->
+
+	<!-- 
+ <p class="link is-yellow is-selected"></p>
+
+  <a href="" class="link"></a>
+  <a href="" class="link is-selected"></a>
+  <a href="" class="link class"></a>
+   -->
+
+	<!-- <p>
+    <a href=""></a>
+  </p>
+
+  <p>
+    <span>
+      <a href=""></a>
+    </span>
+    <a href=""></a>
+  </p> -->
+
+	<!-- <div class="logo"></div>
+  <p></p>
+  <nav></nav>
+
+  <div class="logo"></div>
+  <nav></nav>
+
+  
+  
+
+	<div class="products">
+		<div>
+			<div class="product"></div>
+		</div>
+	</div>
+
+	<div class="products"></div>
+
+	<div class="product"></div>  -->
+
+	<!-- <header id="header_main">
+		<a href="" class="my-class"></a>
+    <a href="" class="my-class"></a>
+    <a href="" class="my-class"></a>
+    <a href="" class="logo"></a>
+    <a href="" class="logo"></a>
+    <p class="logo"></p>
+    <img src="" alt="" class="logo">
+	</header> -->
 </html>
