@@ -1,3 +1,5 @@
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
+
 // const numbers = [9, 7, 5, 3, 4, 8, 2];
 const numbers = [1, 100, 2000, 10000000, 9, 54];
 

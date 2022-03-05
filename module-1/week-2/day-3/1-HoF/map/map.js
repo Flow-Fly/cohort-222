@@ -1,3 +1,5 @@
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
+
 const numbers = [1, 2, 10, 13];
 
 const doubledNumbers = numbers.map((element, index, originalArray) => {

@@ -9,7 +9,7 @@
 
 ## The What
 
-![](https://miro.medium.com/proxy/1*exgznl7z65gttRxLsMAV2A.png)
+![image](https://miro.medium.com/proxy/1*exgznl7z65gttRxLsMAV2A.png)
 
 - functions are values
 - in JS they can be assigned to a variable and passed around in other variables, as argument to functions

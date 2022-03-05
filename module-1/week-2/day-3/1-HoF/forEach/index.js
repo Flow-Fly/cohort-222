@@ -1,3 +1,5 @@
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
+
 const myArray = ["Bob", "Alice", "John"];
 
 // for (let i = 0; i < myArray.length; i++) {
