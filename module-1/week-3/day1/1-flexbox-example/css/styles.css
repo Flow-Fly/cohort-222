@@ -1,0 +1,98 @@
+@font-face {
+  src: url("../fonts/PlayfairDisplay-Regular.ttf");
+  font-family: "PlayfairDisplay-Regular";
+}
+@font-face {
+  src: url("../fonts/PlayfairDisplay-Bold.ttf");
+  font-family: "PlayfairDisplay-Bold";
+}
+
+img {
+  width: 100%;
+}
+
+.projects-container {
+  margin-left: 144px;
+  margin-right: 144px;
+  margin: 0 144px;
+}
+
+.project {
+  display: flex;
+  align-items: center;
+}
+
+.project-image {
+  width: 50%;
+}
+
+.project-info {
+  width: 50%;
+  padding-left: 88px;
+}
+
+/* Mobile media query */
+@media only screen and (max-width: 414px) {
+  .projects-container {
+    margin: 0 8px;
+  }
+  
+  .project {
+    flex-wrap: wrap;
+    margin-bottom: 48px;
+  }
+  
+  .project-image {
+    width: 100%;
+  }
+  
+  .project-info {
+    width: 100%;
+    padding-left: 0px;
+    margin-top: 24px;
+  }
+  
+}
+
+/* Tablet media query */
+@media only screen and (min-width: 415px) and (max-width: 768px){
+  .projects-container {
+    margin: 0 8px;
+  }
+  
+  .project {
+    flex-wrap: wrap;
+    margin-bottom: 48px;
+  }
+  
+  .project-image {
+    width: 100%;
+  }
+  
+  .project-info {
+    width: 100%;
+    padding-left: 0px;
+    margin-top: 24px;
+  }
+}
+
+/* iPad Pro - Small laptops */
+@media only screen and (min-width: 769px) and (max-width: 1248px){
+  body {
+    background-color: orange;
+  }
+}
+
+/* Laptop media query */
+@media only screen and (min-width: 1025px) and (max-width: 1440px){
+  body {
+    background-color: orange;
+  }
+}
+
+/* Higher resolution screens */
+@media only screen and (min-width: 1441px){
+  body {
+    background-color: orange;
+  }
+}
