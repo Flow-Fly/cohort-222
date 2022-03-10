@@ -73,5 +73,3 @@ ines.birthday();
 console.log(`${ines.name} - ${ines.age}`);
 ines.getIsDeveloper();
 ines.run();
-
-// create a function that will take two humans as argument and will return the oldest one
