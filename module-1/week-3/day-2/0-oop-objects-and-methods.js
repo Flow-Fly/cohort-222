@@ -79,9 +79,15 @@ console.log(getStudentsResult(students));
 
 // Create a function that receive an array of students and returns the results average
 const getResultsAverage = (studentsArray) => {
+  // let result = 0;
+  // for(let i = 0; i < studentsArray.length; i++){
+  //   result += studentsArray[i].getTotalResult();
+  // }
+  // return result;
   const totalResult = studentsArray.reduce((acc, student) => {
-    return acc += student.getTotalResult();
+    return acc + student.getTotalResult();
   }, 0);
+  
   return totalResult / studentsArray.length;
 }
 
