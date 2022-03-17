@@ -23,15 +23,15 @@ const list = document.querySelector('#student-list');
 const printStudents = () => {
   list.innerHTML = ""; // Clean the list
   students.forEach(student => {
-    const newLi = document.createElement('li');
-    newLi.innerHTML = `Name: ${student.name} - Age: ${student.age} <button class="delete-button">Delete</button>`;
-    list.appendChild(newLi); // .preppend()
+    const newLi = document.createElement('li'); // Create the list item
+    newLi.innerHTML = `Name: ${student.name} - Age: ${student.age} <button class="delete-button">Delete</button>`; // Set the content of the list item
+    list.appendChild(newLi); // Insert the list item into the list
     
     const buttonsCollection = document.querySelectorAll('.delete-button');
     const buttons = [ ...buttonsCollection ];
     buttons.forEach(but => {
       but.addEventListener('click', (event) => {
-        console.log(event.target);
+        console.log(event.target, event);
         event.target.parentNode.remove();
       })
     })
