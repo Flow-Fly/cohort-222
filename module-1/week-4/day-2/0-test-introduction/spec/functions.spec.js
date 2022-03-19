@@ -58,7 +58,7 @@ describe("maxOfArray(numbers)", () => {
     expect(maxOfArray([])).toEqual(0);
   })
 
-  it('should return the hihgest number of a non-empty array', () => {
+  it('should return the highest number of a non-empty array', () => {
     expect(maxOfArray([2, 1, 32, 454, 1])).toEqual(454);
   })
 })
