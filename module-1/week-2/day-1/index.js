@@ -1,5 +1,5 @@
 console.log("Hello squad !");
 
 while (true) {
-	console.log("Hello");
+	console.log("Ctrl + C    To stop a process");
 }
