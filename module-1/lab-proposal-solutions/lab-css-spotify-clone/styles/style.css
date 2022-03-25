@@ -1,0 +1,212 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:100,300,400,500&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: "Roboto", "sans-serif";
+  font-size: 16px;
+}
+
+.nav-bar {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  z-index: 99;
+  top: 0;
+  /* justify-content: space-between; */
+  align-items: center;
+  background-color: #fff;
+  color: black;
+  padding: 10px 20px;
+  font-weight: 300;
+  font-size: 20px;
+}
+
+.nav-list {
+  list-style-type: none;
+  display: flex;
+  margin-left: auto; /* Distributes all the availabe space as margin automatically on the 
+  left. */
+}
+
+.nav-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 
+  The navbar already has some padding set.
+  If we add 20px of margin to the last child of the nav item
+  we would add extra space from the border of the parent (the nav) so we would end 
+  up with a 40px gap. Which would make it have more space than the navbar logo. 
+  If we want the logo and the list item to have the same gap from the navbar,
+  we don't add the extra margin to the right to the last child.
+  */
+.nav-item:not(:last-child) {
+  margin-right: 20px;
+}
+
+.nav-logo {
+  max-width: 164px;
+}
+
+#banner {
+  height: 100vh;
+  background-image: url("../images/landing.jpg");
+  background-position: center;
+  background-size: cover;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#banner .intro {
+  font-size: 6rem;
+  line-height: 100%;
+  margin-bottom: 40px;
+  font-weight: 500;
+}
+
+#banner .baseline {
+  font-size: 2rem;
+  line-height: 1.5;
+  font-weight: 300;
+}
+
+/* Main  */
+
+.main {
+  padding: 40px;
+}
+
+#features {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#features > .title {
+  border-bottom: 4px solid #00b172;
+  padding-bottom: 2px;
+  font-weight: 500;
+  font-size: 40px;
+}
+
+#features .info-boxes {
+  padding: 80px 0;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#features .info-box {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  margin: 0 20px;
+  align-items: center;
+}
+
+#features .info-box .img {
+  height: 100px;
+}
+
+/* Little example of how to make use of media queries to change the 
+  the size of the icons.
+*/
+@media (max-width: 1000px) {
+  #features .info-box .img {
+    /* Change only the properties you want at a specific view port. */
+    height: 64px;
+  }
+}
+
+#features .info-box .title {
+  font-size: 2rem;
+  line-height: 100%;
+  color: #00b172;
+}
+
+#features .info-box > * {
+  margin-bottom: 20px;
+}
+
+#features .info-box .sub {
+  font-size: 1.5rem;
+}
+
+#footer {
+  background-color: #00b172;
+  position: relative;
+  color: white;
+  padding: 60px;
+}
+
+#footer .spotify-logo {
+  position: absolute;
+  width: 15%;
+  top: calc(
+    50% - (15% / 2)
+  ); /* To center the element, you have to take into account 
+  its original width, and divide it by 2 in order to center it on 
+  the y axis since the property is "top" */
+  left: calc(
+    50% - (15% / 2)
+  ); /* To center the element, you have to take into account 
+  its original width, and divide it by 2 in order to center it on 
+  the x axis since the property is "left" */
+}
+
+#footer > .title {
+  border-bottom: 4px solid;
+  width: max-content;
+  font-size: 40px;
+}
+
+#footer .main-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* 
+  Setting the selector to nth-child 1 allows us to completely ignore the
+  semantic of the 1st child. If we ever had to change the markup of the 1st child
+  going from section to article, or changing the class name for instance
+  this selector wouldn't be affected and would still apply the same properties
+  to that 1st element.
+*/
+#footer .main-content > :nth-child(1) {
+  max-width: 40%;
+}
+
+#footer .main-content > :nth-child(2) {
+  width: 30%;
+}
+
+#footer .information {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+#footer .information .title {
+  font-size: 30px;
+}
+
+#footer .information .description {
+  font-size: 1.5vw; /*  Scaling the font-size to the view width, making it be what we 
+                        call "fluid" */
+  font-weight: 300;
+}
+
+.spotify-app {
+  max-width: 100%;
+  height: auto;
+}
