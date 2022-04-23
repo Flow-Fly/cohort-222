@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/styles.css">
+  <title>Document</title>
+</head>
+<body>
+  {{#if name}}
+    <h1>Welcome {{name}} {{surname}}</h1>
+
+    {{else}}
+    <h1>Welcome unknown</h1>
+  {{/if}}
+
+  {{#unless address}}
+    <p>No address ⚠️</p>
+  {{/unless}}
+
+  <h3>Hobbies</h3>
+  <ul>
+    {{#each hobbies}}
+      <li>{{this}}</li>
+    {{/each}}
+  </ul>
+
+  <h3>Programming experience</h3>
+  <ul>
+    {{#each programming}}
+      <li>Name: {{this.name}} - Level: {{this.level}}</li>
+    {{/each}}
+  </ul>
+
+  <a href="/students">Go to Students page</a>
+</body>
+</html>

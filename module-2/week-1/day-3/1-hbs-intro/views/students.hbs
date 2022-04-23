@@ -1,0 +1,16 @@
+<h1>Students list</h1>
+
+{{#each students}}
+<div>
+  <p>Name: {{this.name}} - Level: {{this.surname}}</p>
+  {{#if this.address}}
+  <p>Address: {{this.address}}</p>
+  {{else}}
+  <p>No address</p>
+  {{/if}}
+  <hr>
+</div>
+{{/each}}
+
+
+<a href="/random-student">Go to random student</a>
