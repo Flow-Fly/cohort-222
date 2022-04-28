@@ -204,9 +204,12 @@ const projects = [
 
 async function seedDatabase() {
 	try {
+		//Wait for the deletion of all the Project and Students
 		await Project.deleteMany();
 		await Student.deleteMany();
 
+		// Create all the projects and wait for the response of the db (the documents created)
+		// and assign it the createdProjects variable
 		const createdProjects = await Project.create(projects);
 
 		console.log(`Created ${createdProjects.length} projects!`);
@@ -215,14 +218,19 @@ async function seedDatabase() {
 
 		for (let i = 0; i < createdStudents.length; i++) {
 			const student = createdStudents[i];
+
+			//Get the username of the user from the github link
 			const username = student.github.slice(19).toLowerCase();
 			// const regex = new RegExp(username);
 
 			for (let j = 0; j < createdProjects.length; j++) {
 				const project = createdProjects[j];
 				// const found = regex.test(project.url);
+				// includes return a boolean, if the username is or note included inside of the project.url String
 				const found = project.url.includes(username);
 				if (found) {
+					// findByIdAndUpdate syntax respect it's name: put the Id then what you want to Update.
+					// it returns the non-updated document, if you want the new one you need to give the {new: true} option.
 					const updatedStudent = await Student.findByIdAndUpdate(
 						student._id,
 						{
@@ -234,7 +242,7 @@ async function seedDatabase() {
 				}
 			}
 		}
-
+		// close the connection once everything is done.
 		await mongoose.connection.close();
 	} catch (err) {
 		console.error(err);
@@ -242,3 +250,89 @@ async function seedDatabase() {
 }
 
 seedDatabase();
+
+// Please, use async / await (This is evil !)
+function seedDatabaseThen() {
+	Project.deleteMany()
+		.then(() => {
+			Student.deleteMany()
+				.then(() => {
+					Project.create(projects)
+						.then((createdProjects) => {
+							console.log(`Created ${createdProjects.length} projects!`);
+							Student.create(students)
+								.then((createdStudents) => {
+									console.log(`Created ${createdStudents.length} students!`);
+
+									for (let i = 0; i < createdStudents.length; i++) {
+										const student = createdStudents[i];
+										const username = student.github.slice(19).toLowerCase();
+										for (let j = 0; j < createdProjects.length; j++) {
+											const project = createdProjects[j];
+											const found = project.url.includes(username);
+											if (found) {
+												Student.findByIdAndUpdate(
+													student._id,
+													{
+														$push: { projects: project._id },
+													},
+													{ new: true }
+												)
+													.then((updatedStudent) => {
+														console.log("updatedStudent", updatedStudent);
+														mongoose.connection.close();
+													})
+													.catch((e) => console.error(e));
+											}
+										}
+									}
+								})
+								.catch((e) => console.error(e));
+						})
+						.catch((e) => console.error(e));
+				})
+				.catch((e) => console.error(e));
+		})
+		.catch((e) => console.error(e));
+}
+
+function seedDatabaseThenWithChaining() {
+	Project.deleteMany()
+		.then(() => {
+			return Student.deleteMany();
+		})
+		.then(() => {
+			return Project.create(projects);
+		})
+		.then((createdProjects) => {
+			console.log(`Created ${createdProjects.length} projects!`);
+			return Student.create(students);
+		})
+		.then((createdStudents) => {
+			console.log(`Created ${createdStudents.length} students!`);
+
+			for (let i = 0; i < createdStudents.length; i++) {
+				const student = createdStudents[i];
+				const username = student.github.slice(19).toLowerCase();
+				for (let j = 0; j < createdProjects.length; j++) {
+					const project = createdProjects[j];
+					const found = project.url.includes(username);
+					if (found) {
+						Student.findByIdAndUpdate(
+							student._id,
+							{
+								$push: { projects: project._id },
+							},
+							{ new: true }
+						)
+							.then((updatedStudent) => {
+								console.log("updatedStudent", updatedStudent);
+								mongoose.connection.close();
+							})
+							.catch((e) => console.error(e));
+					}
+				}
+			}
+		})
+		.catch((e) => console.error(e));
+}
