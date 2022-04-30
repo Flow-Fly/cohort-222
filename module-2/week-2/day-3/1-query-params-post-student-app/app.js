@@ -18,9 +18,9 @@ app.use(express.static("public"));
 hbs.registerPartials(__dirname + "/views/partials");
 
 /**
- * Retrieve the payload of a POST request
- * and display it in Object with key-values pairs
- * display it under request.body
+ ** Retrieve the payload of a POST request
+ ** and display it in Object with key-values pairs
+ ** display it under request.body
  */
 app.use(express.urlencoded({ extended: true }));
 
@@ -31,10 +31,13 @@ app.get("/", (req, res) => {
 	res.render("home");
 });
 
+//! This route would prevent us from accessing other routes
+//! Defined later on, like '/students', '/search'
 // app.get("/:something", (req, res) => {
 // 	res.send("Oh no !");
 // });
 
+//! Query all of the students from the db and display them
 app.get("/students", async (req, res) => {
 	try {
 		const allStudents = await Student.find();
@@ -45,6 +48,7 @@ app.get("/students", async (req, res) => {
 	}
 });
 
+//! Receive a req.query and perform a search the username in the database.
 app.get("/search", async (req, res) => {
 	const { q } = req.query;
 	try {
@@ -56,6 +60,9 @@ app.get("/search", async (req, res) => {
 	}
 });
 
+//! This route is not protected agains wrong id, yet.
+//! It has access to req.params, the key is whatever has been
+//! written after the ":"
 app.get("/students/:id", async (req, res) => {
 	const { id } = req.params;
 	try {
@@ -67,10 +74,14 @@ app.get("/students/:id", async (req, res) => {
 	}
 });
 
+//! Display a form
 app.get("/student/create", (req, res) => {
 	res.render("students/create-student");
 });
 
+//! Receive a post request (coming from a form)
+//! The values from the form are found under request.body,
+//! Their keys are coming from the "name" attribute of the input inside of the form.
 app.post("/student/create", async (req, res) => {
 	let { name, github, hasPets } = req.body;
 	hasPets = hasPets === "yes" ? true : false;
