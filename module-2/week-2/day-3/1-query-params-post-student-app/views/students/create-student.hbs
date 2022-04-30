@@ -1,0 +1,27 @@
+<form action="/student/create" method="post">
+
+	<div>
+		<label for="name">Name: </label>
+		<input type="text" id="name" name="name" />
+	</div>
+
+	<div>
+		<label for="github">Github link: </label>
+		<input type="text" id="github" name="github" />
+	</div>
+
+	<div>
+		<p>Do you have pets ?</p>
+		<div>
+			<input type="radio" name="hasPets" id="yes" value="yes" />
+			<label for="yes">Yes</label>
+		</div>
+		<div>
+			<input type="radio" name="hasPets" id="no" value="no" />
+			<label for="no">No</label>
+		</div>
+
+		<button>Submit</button>
+	</div>
+
+</form>

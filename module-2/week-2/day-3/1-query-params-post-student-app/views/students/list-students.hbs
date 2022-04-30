@@ -1,0 +1,14 @@
+<ul>
+	{{#each allStudents}}
+		<li>
+			<p><a href="/students/{{_id}}">{{username}}</a></p>
+			<p>has some pets
+				{{#if hasPets}}
+					yes
+				{{else}}
+					no
+				{{/if}}
+			</p>
+		</li>
+	{{/each}}
+</ul>
