@@ -11,6 +11,7 @@ const studentSchema = new Schema({
 		type: String,
 		required: true,
 	},
+	username: String,
 	// We can add some check to our field (should it be unique? Is it required...?)
 	hasPets: Boolean,
 	petsNames: [String],
@@ -21,6 +22,11 @@ const studentSchema = new Schema({
 			ref: "project",
 		},
 	],
+});
+
+studentSchema.pre("save", function (next) {
+	this.username = this.github.slice(19).toLowerCase();
+	next();
 });
 
 // Creating the model

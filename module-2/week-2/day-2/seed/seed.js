@@ -220,7 +220,7 @@ async function seedDatabase() {
 			const student = createdStudents[i];
 
 			//Get the username of the user from the github link
-			const username = student.github.slice(19).toLowerCase();
+			const username = student.username;
 			// const regex = new RegExp(username);
 
 			for (let j = 0; j < createdProjects.length; j++) {
