@@ -1,0 +1,25 @@
+<h1>Pokemons list</h1>
+<div class="row">
+{{#each pokemons}}
+<div class="card col-3" style="width: 18rem;">
+  <img src="{{this.image}}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{this.name}}</h5>
+    <p>Comment: {{this.comment.text}}</p>
+    <p>Stars: {{this.comment.stars}}</p>
+
+    <p>Comments list: </p>
+    <ul>
+      {{#each this.comments}}
+        <li>{{this.text}}</li>
+       {{/each}}
+    </ul>
+    <a href="/pokemons/{{this._id}}" class="btn btn-primary">Go to details page</a>
+    <a href="/pokemons/{{this._id}}/edit" class="btn btn-primary">Edit pokemon</a>
+    <form action="/pokemons/{{this._id}}/delete" method="post">
+      <button class="btn btn-danger" type="submit">Delete pokemon</button>
+    </form>
+  </div>
+</div>
+{{/each}}
+</div>
