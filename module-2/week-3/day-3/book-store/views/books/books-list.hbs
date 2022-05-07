@@ -1,0 +1,14 @@
+<div class="container">
+  <h1>Books list</h1>
+  {{#each books}}
+    <div class="book-row">
+      <a href="/books/{{this._id}}">{{this.title}}</a>
+      <div class="action-links">
+        <a href="/books/{{this._id}}/edit" class="btn btn-dark">Edit</a>
+        <form action="/books/{{this._id}}/delete" method="post">
+          <button type="submit" class="btn btn-warning">Delete</button>
+        </form>
+      </div>
+    </div>
+  {{/each}}
+</div>

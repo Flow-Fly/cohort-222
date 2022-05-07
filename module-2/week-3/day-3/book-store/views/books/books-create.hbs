@@ -1,0 +1,52 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h1>Create book</h1>
+
+            <hr>
+
+            <form action="/books/create" method="POST">
+
+                <div class="mb-3">
+                    <label for="title" class="form-label">Title</label>
+                    <input required type="text" class="form-control" id="title" name="title">
+                </div>
+
+                <div class="mb-3">
+                    <label for="description" class="form-label">Description</label>
+                    <input type="text" class="form-control" id="description" name="description">
+                </div>
+
+                <div class="mb-3">
+                    <label for="name" class="form-label">Author name</label>
+                    <input type="text" class="form-control" id="name" name="name">
+                </div>
+
+                <div class="mb-3">
+                    <label for="lastName" class="form-label">Author lastname</label>
+                    <input type="text" class="form-control" id="lastName" name="lastName">
+                </div>
+
+                <div class="mb-3">
+                    <label for="nationality" class="form-label">Author nationality</label>
+                    <input type="text" class="form-control" id="nationality" name="nationality">
+                </div>
+
+                <div class="mb-3">
+                    <label for="pictureUrl" class="form-label">Author picture</label>
+                    <input type="text" class="form-control" id="pictureUrl" name="pictureUrl">
+                </div>
+
+                <div class="mb-3">
+                    <label for="rating" class="form-label">Rating</label>
+                    <input type="number" class="form-control" id="rating" name="rating">
+                </div>
+
+
+                <button type="submit" class="btn btn-dark">Create new book</button>
+                <a href="/" class="btn btn-dark">Go back</a>
+            </form>
+            <hr>
+        </div>
+    </div>
+</div>
