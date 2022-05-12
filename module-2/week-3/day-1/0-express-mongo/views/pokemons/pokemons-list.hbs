@@ -1,0 +1,12 @@
+<h1>Pokemons list</h1>
+<div class="row">
+{{#each pokemons}}
+<div class="card col-3" style="width: 18rem;">
+  <img src="{{this.image}}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{this.name}}</h5>
+    <a href="/pokemons/{{this._id}}" class="btn btn-primary">Go to details page</a>
+  </div>
+</div>
+{{/each}}
+</div>
