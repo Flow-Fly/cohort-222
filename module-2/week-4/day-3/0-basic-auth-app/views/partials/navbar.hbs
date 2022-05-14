@@ -1,0 +1,12 @@
+<nav>
+	<ul>
+		{{#if isLoggedIn}}
+			<li><a href="/profile">Profile</a></li>
+			<li><a href="/auth/logout">Logout</a></li>
+		{{else}}
+			<li><a href="/auth/signin">Signin</a></li>
+			<li><a href="/auth/signup">Signup</a></li>
+		{{/if}}
+		<li><a href="/">Home</a></li>
+	</ul>
+</nav>

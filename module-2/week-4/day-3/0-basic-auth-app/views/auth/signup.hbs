@@ -1,0 +1,21 @@
+<h2>Signup</h2>
+
+<form action="/auth/signup" method="post">
+	<div class="input-container">
+		<label for="mail">Email: </label>
+		<input class="form-input" type="email" name="email" id="mail" required />
+
+	</div>
+	<div class="input-container">
+		<label for="pass">Password: </label>
+		<input class="form-input" type="password" name="password" id="pass" />
+
+	</div>
+
+	{{#if errorMessage}}
+		<p class="error">⚠️ {{errorMessage}}</p>
+	{{/if}}
+
+	<button>Create a User !</button>
+
+</form>
