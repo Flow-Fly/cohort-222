@@ -1,0 +1,110 @@
+body {
+	font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+:root {
+	--transition: all 200ms ease-in-out;
+}
+
+a {
+	color: whitesmoke;
+	font-weight: 600;
+	text-decoration: none;
+	transition: var(--transition);
+	display: inline-block;
+}
+
+a:hover {
+	transform: translateY(-1px);
+	color: rgb(236, 238, 202);
+}
+
+ul {
+	display: flex;
+	gap: 2em;
+	list-style: none;
+}
+
+nav {
+	background-color: black;
+	height: 70px;
+	display: flex;
+	align-items: center;
+	padding-left: 50px;
+}
+
+.main-content {
+	margin-top: 50px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: whitesmoke;
+	padding: 1.5rem 2rem;
+	border-radius: 0.5rem;
+	border: 1px solid gray;
+	gap: 2em;
+}
+
+.input-container {
+	position: relative;
+	border: 1px solid black;
+	border-radius: 0.2rem;
+}
+
+label {
+	position: absolute;
+	color: black;
+	top: -6px;
+	background-color: whitesmoke;
+	padding: 0 0.5em;
+}
+
+.form-input {
+	height: 2.4rem;
+	outline: none;
+	border: none;
+	background-color: whitesmoke;
+	border-radius: 0.2rem;
+	font-weight: 500;
+	padding: 0 0.5rem;
+	letter-spacing: 0.1em;
+	color: rgb(68, 68, 68);
+}
+
+button {
+	font-family: inherit;
+	color: whitesmoke;
+	background-color: black;
+	border: none;
+	padding: 0.5rem;
+	transition: var(--transition);
+	border: 1px solid black;
+	border-radius: 0.5rem;
+	cursor: pointer;
+	font-weight: 600;
+}
+button:hover {
+	background-color: whitesmoke;
+	color: black;
+}
+
+.error {
+	color: rgb(129, 18, 18);
+	background-color: white;
+	padding: 1em;
+	border-radius: 0.5rem;
+	box-shadow: 0 0 6px 9px rgba(0, 0, 0, 0.15);
+}

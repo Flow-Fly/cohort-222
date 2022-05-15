@@ -1,0 +1,27 @@
+<h2>Signin</h2>
+
+<form action="/auth/signin" method="post">
+	<div class="input-container">
+		<label for="mail">Email: </label>
+		<input class="form-input" type="email" name="email" id="mail" required />
+
+	</div>
+	<div class="input-container">
+		<label for="pass">Password: </label>
+		<input
+			class="form-input"
+			type="password"
+			name="password"
+			id="pass"
+			required
+		/>
+
+	</div>
+
+	{{#if errorMessage}}
+		<p class="error">⚠️ {{errorMessage}}</p>
+	{{/if}}
+
+	<button>Log-in !</button>
+
+</form>
