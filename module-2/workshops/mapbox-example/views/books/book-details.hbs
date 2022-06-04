@@ -1,0 +1,21 @@
+<div class="container">
+  <h1>{{title}} details</h1>
+  <hr>
+
+  <div class="row">
+    <div class="col-8">
+      <h3>Details</h3>
+      <p>Description: {{description}}</p>
+      <p>Rating: {{rating}}</p>
+    </div>
+    <div class="col-4">
+      <h3>Author</h3>
+      <img src="{{author.pictureUrl}}" alt="author-img">
+      <p>{{author.name}} {{author.lastName}} ({{author.nationality}})</p>
+    </div>
+  </div>
+
+  <hr>
+  <a href="/books">Go back to list</a>
+
+</div>
