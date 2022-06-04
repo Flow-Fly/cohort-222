@@ -9,11 +9,33 @@ const main = async () => {
     style: "mapbox://styles/mapbox/streets-v10"
   })
 
-  if(navigator.geolocation){
+  const geocoder = new MapboxGeocoder({
+    accessToken: mapboxgl.accessToken,
+    mapboxgl: mapboxgl
+  });
+  map.addControl(
+    geocoder
+  );
+
+  // Listener that fires every time you get a search result
+  geocoder.on('result', function(e) {
+    console.log(e.result.center);
+    const lngInput = document.querySelector('#longitude');
+    const latInput = document.querySelector('#latitude');
+
+    lngInput.value = e.result.center[0];
+    latInput.value = e.result.center[1];
+  })
+
+  if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(
       (position) => {
         console.log(position);
         const coordinates = [position.coords.longitude, position.coords.latitude];
+        new mapboxgl.Marker({ color: "blue" })
+          .setLngLat(coordinates)
+          .addTo(map);
+
         map.setCenter(coordinates);
       },
       () => console.log("Your browser doesn't support geolocation")
@@ -22,22 +44,6 @@ const main = async () => {
   } else {
     console.log("Your browser doesn't support geolocation")
   }
-
-  const res = await axios.get("http://localhost:3000/books/json-list");
-  console.log(res.data);
-  res.data.forEach(book => {
-    const popup = new mapboxgl.Popup().setHTML(
-      `
-        <h4>${book.title}</h4>
-        <p>${book.description}</p>
-        <a href="/books/${book._id}">See details</a>
-      `
-    )
-    new mapboxgl.Marker({ color: "red"})
-    .setLngLat(book.location.coordinates)
-    .setPopup(popup)
-    .addTo(map);
-  })
 }
 
 window.addEventListener('load', main);

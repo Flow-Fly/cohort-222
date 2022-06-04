@@ -42,6 +42,18 @@
                     <input type="number" class="form-control" id="rating" name="rating">
                 </div>
 
+                <div class="mb-3">
+                    <label for="rating" class="form-label">Latitude</label>
+                    <input required type="number" step="any" class="form-control" id="latitude" name="latitude">
+                </div>
+
+                 <div class="mb-3">
+                    <label for="rating" class="form-label">Longitude</label>
+                    <input required type="number" step="any" class="form-control" id="longitude" name="longitude">
+                </div>
+
+                <div id="map" style='width: 800px; height: 600px;'></div>
+
 
                 <button type="submit" class="btn btn-dark">Create new book</button>
                 <a href="/" class="btn btn-dark">Go back</a>
@@ -50,3 +62,9 @@
         </div>
     </div>
 </div>
+
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.js'></script>
+<link href='https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.css' rel='stylesheet' />
+<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>
+<link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css" type="text/css">
+<script src="/js/create-map.js"></script>

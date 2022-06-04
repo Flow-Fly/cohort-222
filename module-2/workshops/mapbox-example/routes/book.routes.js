@@ -27,7 +27,7 @@ router.get('/create', (req, res, next) => {
 
 router.post('/create', async (req, res, next) => {
   try {
-    const { title, description, name, lastName, nationality, pictureUrl, rating } = req.body;
+    const { title, description, name, lastName, nationality, pictureUrl, rating, latitude, longitude } = req.body;
     await Book.create({
       title,
       description,
@@ -37,7 +37,11 @@ router.post('/create', async (req, res, next) => {
         nationality,
         pictureUrl
       },
-      rating
+      rating,
+      location: {
+        type: "Point",
+        coordinates: [longitude, latitude]
+      }
     });
 
     res.redirect('/books');
