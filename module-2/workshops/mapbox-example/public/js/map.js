@@ -1,4 +1,4 @@
-const MAPBOX_ACCESS_TOKEN = "pk.eyJ1IjoiZGllZ29tZW5kZXpwIiwiYSI6ImNrMGR4Mzg1czAzbXgzbm1wamF5MWZibTYifQ.s885IbTls6cwT9dMO8YUNA"
+const MAPBOX_ACCESS_TOKEN = "YOUR TOKEN GOES HERE"
 
 const main = async () => {
   mapboxgl.accessToken = MAPBOX_ACCESS_TOKEN;
