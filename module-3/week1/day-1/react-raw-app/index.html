@@ -1,0 +1,33 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Add React to a Website</title>
+  <meta charset="UTF-8" />
+  <!-- React's core library-->
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <!-- ReactDOM library renders the content created with React to the DOM. -->
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <!-- Load Babel - used to parse JSX -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel">
+    // const h1 = React.createElement('h1', null, 'First React component');
+    ReactDOM.render(
+      <div>
+        <div>
+          <h1>First React Example</h1>
+          <button>Go to the docs</button>
+        </div>  
+      </div>,
+      document.getElementById('root')
+    )
+  </script>
+</body>
+</html>
