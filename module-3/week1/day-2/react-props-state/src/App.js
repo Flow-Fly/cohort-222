@@ -1,5 +1,7 @@
+import { useState } from 'react';
 import './App.css';
 import Card from './components/Card';
+import Counter from './components/Counter';
 import Student from './components/Student';
 
 const studentsArray = [
@@ -21,8 +23,10 @@ const studentsArray = [
 ]
 
 function App() {
+  const [ theme, setTheme ] = useState('light');
   return (
-    <div className="App">
+    <div className={theme}>
+      <button onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}>Change theme</button>
       {/* <Student student={studentsArray[0]} />
       <Student student={studentsArray[1]}/>
       <Student student={studentsArray[2]}/> */}
@@ -37,6 +41,9 @@ function App() {
        <Student />
       </Card>
 
+      <Counter />
+      <Counter />
+      <Counter />
     </div>
   );
 }
