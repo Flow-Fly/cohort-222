@@ -1,0 +1,21 @@
+.student {
+  width: 300px;
+  padding: 24px;
+  margin-top: 16px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.good-student {
+  border: 3px solid green;
+}
+
+.bad-student {
+  border: 3px solid red;
+}
+
+.card {
+  background-color: #C4C3C4;
+  padding: 16px;
+  border-radius: 8px;
+}
