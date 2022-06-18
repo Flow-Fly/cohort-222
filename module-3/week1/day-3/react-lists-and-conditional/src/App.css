@@ -12,8 +12,16 @@ h1 {
   gap: 24px;
   width: 90%;
   margin: auto;
+  margin-top: 40px;
 }
 
 .movie {
   width: 32%;
+}
+
+.action-buttons {
+  display: flex;
+  width: 90%;
+  margin: auto;
+  gap: 16px;
 }
