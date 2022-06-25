@@ -5,6 +5,7 @@ const Counter = () => {
 	// const [name, setName] = useState("")
 	const [intervalState, setIntervalState] = useState(null)
 
+	//! Executed when the component is mounted
 	useEffect(() => {
 		console.log("Component is mounted !!")
 		const intervalId = setInterval(() => {
@@ -14,10 +15,13 @@ const Counter = () => {
 		setIntervalState(intervalId)
 	}, [])
 
+	//! Executed when `count` is modified
 	useEffect(() => {
 		// console.log("Count has been modified to ", count)
 	}, [count])
 
+	//! Executed when intervalState is modified and the cleanup function get triggered when the component is
+	//! Unmounting
 	useEffect(() => {
 		return () => {
 			console.log("Component is going to unmount 👀")
