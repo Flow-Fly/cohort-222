@@ -1,0 +1,27 @@
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  text-align: center;
+}
+
+.movies-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  width: 90%;
+  margin: auto;
+  margin-top: 40px;
+}
+
+.movie {
+  width: 32%;
+}
+
+.action-buttons {
+  display: flex;
+  width: 90%;
+  margin: auto;
+  gap: 16px;
+}
