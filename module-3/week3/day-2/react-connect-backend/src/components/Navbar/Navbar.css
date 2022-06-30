@@ -1,0 +1,14 @@
+nav {
+  padding: 24px 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+} 
+
+nav a {
+  color: black;
+}
+
+.selected {
+  color: blue;
+}

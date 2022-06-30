@@ -1,11 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useSearchParams } from 'react-router-dom'
 
 export default function ResultsPage() {
   const [ searchParams, setSearchParams ] = useSearchParams();
 
   const place = searchParams.get("place");
-  const destType = searchParams.get("destType")
+  const destType = searchParams.get("destType");
+
+  useEffect(() => {
+    // API CALL
+  }, [])
   return (
     <div>
       <h1>Results page</h1>
