@@ -1,9 +1,16 @@
 module.exports = (app) => {
-  // TODO - 404 middleware: this middleware runs whenever requested page is not available
   app.use((req, res, next) => {
+    // this middleware runs whenever requested page is not available
+    return res.status(404).json({ errorMessage: "This route does not exist" });
   });
 
-  // TODO - 500 error middleware: whenever you call next(err), this middleware will handle the error 
   app.use((err, req, res, next) => {
+    // whenever you call next(err), this middleware will handle the error 
+    // always logs the error
+    console.error("ERROR", req.method, req.path, err);
+
+    if(!res.headersSent){
+      return res.status(500).json({ errorMessage: "Internal server error. Check the server console", err });
+    }
   });
 };

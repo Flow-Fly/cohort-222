@@ -1,8 +1,38 @@
-// TODO - Todo Model
+const mongoose = require("mongoose")
+const Schema = mongoose.Schema;
 
-// The model should have::
-// - name: String - required
-// - description: String - max length 250 characters
-// - done: Boolean - default value false
-// - priority: Boolean - default value false
-// - dueDate: Date - default value the date of creation
+const todoSchema = new Schema({
+  name: {
+    type: String,
+    required: true
+  },
+  description: {
+    type: String,
+    maxlength: 250
+  },
+  done: {
+    type: Boolean,
+    default: false
+  },
+  priority: {
+    type: Boolean,
+    default: false
+  },
+  dueDate: {
+    type: Date,
+    default: Date.now
+  }
+}, {
+  timestamps: true,
+  toJSON: {
+    transform: (doc, ret) => {
+      ret.id = doc._id;
+      delete ret.__v;
+      delete ret._id;
+      return ret;
+    }
+  }
+})
+
+const Todo = mongoose.model('Todo', todoSchema);
+module.exports = Todo;
