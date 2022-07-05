@@ -1,0 +1,16 @@
+.ListTodo .container {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	align-items: center;
+}
+
+.OneTodo {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: rgb(231, 231, 164);
+	border-radius: 0.5rem;
+	max-width: 20rem;
+	padding: 1rem;
+}
