@@ -1,0 +1,24 @@
+.Header {
+	background-color: black;
+	color: whitesmoke;
+	display: flex;
+	gap: 2rem;
+	align-items: center;
+	padding-left: 2rem;
+	height: 4rem;
+}
+
+.Header > ul {
+	list-style-type: none;
+	display: flex;
+	gap: 1rem;
+}
+
+.Header a {
+	color: inherit;
+	text-decoration: none;
+}
+
+.Header a.active {
+	color: red;
+}

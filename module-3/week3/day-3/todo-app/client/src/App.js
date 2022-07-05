@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css"
+import { Routes, Route } from "react-router-dom"
+import axios from "axios"
+import { useEffect } from "react"
+import HomePage from "./pages/HomePage"
+import Header from "./components/Header/Header"
+import ListTodo from "./pages/ListTodo/ListTodo"
+import FormTodo from "./pages/FormTodo/FormTodo"
+const API_URL = process.env.REACT_APP_BACKEND_URL
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	// const makeAnAxiosCall = async () => {
+	// 	const response = await axios.get(API_URL)
+	// 	console.log(response)
+	// }
+	// useEffect(() => {
+	// 	makeAnAxiosCall()
+	// }, [])
+	return (
+		<div className="App">
+			<Header />
+			<Routes>
+				<Route path="/" element={<HomePage />} />
+				<Route path="/todo" element={<ListTodo />} />
+				<Route path="/todo/create" element={<FormTodo />} />
+			</Routes>
+		</div>
+	)
 }
 
-export default App;
+export default App
