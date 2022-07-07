@@ -7,6 +7,8 @@ import Header from "./components/Header/Header"
 import ListTodo from "./pages/ListTodo/ListTodo"
 import FormTodo from "./pages/FormTodo/FormTodo"
 import DetailsTodo from "./pages/DetailsTodo/DetailsTodo"
+import Signup from "./pages/Signup/Signup"
+import Signin from "./pages/Signin/Signin"
 // const API_URL = process.env.REACT_APP_BACKEND_URL
 
 function App() {
@@ -24,7 +26,10 @@ function App() {
 				<Route path="/" element={<HomePage />} />
 				<Route path="/todo" element={<ListTodo />} />
 				<Route path="/todo/:id" element={<DetailsTodo />} />
+				{/* <Route path="/todo/edit/:id" element={<EditTodo />} /> */}
 				<Route path="/todo/create" element={<FormTodo />} />
+				<Route path="/signup" element={<Signup />} />
+				<Route path="/signin" element={<Signin />} />
 			</Routes>
 		</div>
 	)

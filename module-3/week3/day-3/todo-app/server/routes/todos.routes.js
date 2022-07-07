@@ -1,4 +1,5 @@
 const express = require("express")
+const isAuthenticated = require("../middlewares/isAuthenticated")
 const router = express.Router()
 const Todo = require("../models/Todo.model")
 
@@ -27,7 +28,8 @@ router.get("/:id", async (req, res, next) => {
 })
 
 // (C)RUD - Create new todo
-router.post("/", async (req, res, next) => {
+router.post("/", isAuthenticated, async (req, res, next) => {
+	console.log(req.payload)
 	try {
 		const { name, description, dueDate, priority } = req.body
 		if (!name) {

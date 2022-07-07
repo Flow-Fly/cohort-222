@@ -14,9 +14,14 @@ const FormTodo = () => {
 
 	const handleSubmit = async (e) => {
 		e.preventDefault()
+		const token = localStorage.getItem("authToken")
 		const payload = { name, description, dueDate, priority }
 		try {
-			const response = await axios.post(`${API_URL}/todos`, payload)
+			const response = await axios.post(`${API_URL}/todos`, payload, {
+				headers: {
+					Authorization: `Bearer ${token}`,
+				},
+			})
 			navigate("/todo")
 		} catch (error) {
 			console.error(error)
